@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Phone Shop📱</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      background: radial-gradient(circle at center, #1a1a1a 0%, #000 100%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    /* 💎 Téléphone (plus petit et plus stylé) */
+    .card {
+      position: relative;
+      width: 200px;   /* أصغر */
+      height: 410px;  /* أصغر */
+      background: linear-gradient(160deg, #1c1c1c, #292929);
+      border-radius: 35px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.6), inset 0 0 8px rgba(255,255,255,0.05);
+      border: 2px solid #333;
+      overflow: hidden;
+    }
+
+    /* 💡 انعكاس الشاشة */
+    .card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(120deg, rgba(255,255,255,0.05) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    /* 🎥 الكاميرا و السبيكر */
+    .top {
+      position: absolute;
+      top: 12px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 16px;
+      background: #111;
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+    }
+
+    .camera {
+      width: 7px;
+      height: 7px;
+      background: #000;
+      border: 2px solid #444;
+      border-radius: 50%;
+    }
+
+    .int {
+      width: 3px;
+      height: 3px;
+      background: #00aaff;
+      border-radius: 50%;
+      animation: blink 2s infinite;
+    }
+
+    .speaker {
+      width: 35px;
+      height: 3px;
+      background: #444;
+      border-radius: 3px;
+    }
+
+    /* 💬 النص */
+    .card-int {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      color: white;
+      text-align: center;
+      padding: 10px;
+    }
+
+    .hello {
+      font-size: 1.2em;
+      font-weight: 700;
+      color: #00bfff;
+      text-shadow: 0 0 10px #00bfff, 0 0 25px #0088ff;
+      margin-top: 30px;
+      animation: glow 3s infinite alternate;
+    }
+
+    .hidden {
+      display: block;
+      opacity: 0;
+      transform: translateY(10px);
+      animation: fadeUp 2s forwards;
+    }
+
+    .hidden:nth-child(2) { animation-delay: 1s; }
+    .hidden:nth-child(3) { animation-delay: 2s; }
+
+    /* 🔘 الزر */
+    .button {
+      margin-top: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 8px 15px;
+      border-radius: 30px;
+      border: none;
+      cursor: pointer;
+      font-size: 0.9em;
+      font-weight: bold;
+      color: #111;
+      background: linear-gradient(90deg, #00bfff, #00ffcc);
+      box-shadow: 0 4px 15px rgba(0,191,255,0.5);
+      transition: all 0.3s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-3px) scale(1.05);
+      box-shadow: 0 6px 20px rgba(0,191,255,0.7);
+    }
+
+    .arrowContainer svg {
+      transition: transform 0.3s ease;
+    }
+
+    .button:hover .arrowContainer svg {
+      transform: translateX(4px);
+    }
+
+    h5 {
+      margin: 0;
+      color: black;
+    }
+
+    /* ✨ Animations */
+    @keyframes blink {
+      0%, 100% { opacity: 0.2; }
+      50% { opacity: 1; }
+    }
+
+    @keyframes glow {
+      0% { text-shadow: 0 0 10px #00bfff; }
+      100% { text-shadow: 0 0 25px #00bfff, 0 0 50px #00ffff; }
+    }
+
+    @keyframes fadeUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+  </style>
+  
+</head>
+<body>
+  <div class="card">
+    <div class="top">
+      <div class="camera"><div class="int"></div></div>
+      <div class="speaker"></div>
+    </div>
+
+    <div class="card-int">
+      <div class="hello">
+        WELCOME
+        <span class="hidden">TO</span>
+        <span class="hidden">MY📱PHONE</span>
+
+        <div>
+          <a href="insc.html">
+            <button class="button">
+              <h5>Suivant</h5>
+              <div class="arrowContainer">
+                <svg width="18" height="18" viewBox="0 0 45 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M43.7678 20.7678C44.7441 19.7915 44.7441 18.2085 43.7678 17.2322L27.8579 1.32233C26.8816 0.34602 25.2986 0.34602 24.3223 1.32233C23.346 2.29864 23.346 3.88155 24.3223 4.85786L38.4645 19L24.3223 33.1421C23.346 34.1184 23.346 35.7014 24.3223 36.6777C25.2986 37.654 26.8816 37.654 27.8579 36.6777L43.7678 20.7678ZM0 21.5L42 21.5V16.5L0 16.5L0 21.5Z" fill="black"></path>
+                </svg>
+              </div>
+            </button>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+</body>
+</html>
